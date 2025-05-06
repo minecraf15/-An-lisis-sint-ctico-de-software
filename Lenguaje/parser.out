@@ -1,0 +1,2366 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    LLAVE_DER
+    LLAVE_IZQ
+    UMENOS
+
+Grammar
+
+Rule 0     S' -> programa
+Rule 1     programa -> declaraciones
+Rule 2     declaraciones -> declaracion
+Rule 3     declaraciones -> declaraciones declaracion
+Rule 4     declaracion -> expresion PUNTO_Y_COMA
+Rule 5     declaracion -> asignacion PUNTO_Y_COMA
+Rule 6     declaracion -> si_declaracion
+Rule 7     declaracion -> mientras_declaracion
+Rule 8     declaracion -> imprimir_declaracion PUNTO_Y_COMA
+Rule 9     imprimir_declaracion -> IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+Rule 10    expresion -> expresion MAS expresion
+Rule 11    expresion -> expresion MENOS expresion
+Rule 12    expresion -> expresion POR expresion
+Rule 13    expresion -> expresion DIVIDIDO expresion
+Rule 14    expresion -> expresion IGUAL expresion
+Rule 15    expresion -> expresion NO_IGUAL expresion
+Rule 16    expresion -> expresion MENOR expresion
+Rule 17    expresion -> expresion MENOR_IGUAL expresion
+Rule 18    expresion -> expresion MAYOR expresion
+Rule 19    expresion -> expresion MAYOR_IGUAL expresion
+Rule 20    expresion -> expresion Y expresion
+Rule 21    expresion -> expresion O expresion
+Rule 22    expresion -> MENOS expresion
+Rule 23    expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER
+Rule 24    expresion -> ENTERO
+Rule 25    expresion -> DECIMAL
+Rule 26    expresion -> CADENA
+Rule 27    expresion -> VERDADERO
+Rule 28    expresion -> FALSO
+Rule 29    expresion -> IDENTIFICADOR
+Rule 30    asignacion -> IDENTIFICADOR ASIGNACION expresion
+Rule 31    si_declaracion -> SI expresion HACER declaraciones FIN
+Rule 32    si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN
+Rule 33    mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN
+
+Terminals, with rules where they appear
+
+ASIGNACION           : 30
+CADENA               : 26
+DECIMAL              : 25
+DIVIDIDO             : 13
+ENTERO               : 24
+FALSO                : 28
+FIN                  : 31 32 33
+HACER                : 31 32 32 33
+IDENTIFICADOR        : 29 30
+IGUAL                : 14
+IMPRIMIR             : 9
+LLAVE_DER            : 
+LLAVE_IZQ            : 
+MAS                  : 10
+MAYOR                : 18
+MAYOR_IGUAL          : 19
+MENOR                : 16
+MENOR_IGUAL          : 17
+MENOS                : 11 22
+MIENTRAS             : 33
+NO_IGUAL             : 15
+O                    : 21
+PARENTESIS_DER       : 9 23
+PARENTESIS_IZQ       : 9 23
+POR                  : 12
+PUNTO_Y_COMA         : 4 5 8
+SI                   : 31 32
+SINO                 : 32
+UMENOS               : 
+VERDADERO            : 27
+Y                    : 20
+error                : 
+
+Nonterminals, with rules where they appear
+
+asignacion           : 5
+declaracion          : 2 3
+declaraciones        : 1 3 31 32 32 33
+expresion            : 4 9 10 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 23 30 31 32 33
+imprimir_declaracion : 8
+mientras_declaracion : 7
+programa             : 0
+si_declaracion       : 6
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . programa
+    (1) programa -> . declaraciones
+    (2) declaraciones -> . declaracion
+    (3) declaraciones -> . declaraciones declaracion
+    (4) declaracion -> . expresion PUNTO_Y_COMA
+    (5) declaracion -> . asignacion PUNTO_Y_COMA
+    (6) declaracion -> . si_declaracion
+    (7) declaracion -> . mientras_declaracion
+    (8) declaracion -> . imprimir_declaracion PUNTO_Y_COMA
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+    (30) asignacion -> . IDENTIFICADOR ASIGNACION expresion
+    (31) si_declaracion -> . SI expresion HACER declaraciones FIN
+    (32) si_declaracion -> . SI expresion HACER declaraciones SINO HACER declaraciones FIN
+    (33) mientras_declaracion -> . MIENTRAS expresion HACER declaraciones FIN
+    (9) imprimir_declaracion -> . IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 16
+    SI              shift and go to state 17
+    MIENTRAS        shift and go to state 18
+    IMPRIMIR        shift and go to state 19
+
+    programa                       shift and go to state 1
+    declaraciones                  shift and go to state 2
+    declaracion                    shift and go to state 3
+    expresion                      shift and go to state 4
+    asignacion                     shift and go to state 5
+    si_declaracion                 shift and go to state 6
+    mientras_declaracion           shift and go to state 7
+    imprimir_declaracion           shift and go to state 8
+
+state 1
+
+    (0) S' -> programa .
+
+
+
+state 2
+
+    (1) programa -> declaraciones .
+    (3) declaraciones -> declaraciones . declaracion
+    (4) declaracion -> . expresion PUNTO_Y_COMA
+    (5) declaracion -> . asignacion PUNTO_Y_COMA
+    (6) declaracion -> . si_declaracion
+    (7) declaracion -> . mientras_declaracion
+    (8) declaracion -> . imprimir_declaracion PUNTO_Y_COMA
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+    (30) asignacion -> . IDENTIFICADOR ASIGNACION expresion
+    (31) si_declaracion -> . SI expresion HACER declaraciones FIN
+    (32) si_declaracion -> . SI expresion HACER declaraciones SINO HACER declaraciones FIN
+    (33) mientras_declaracion -> . MIENTRAS expresion HACER declaraciones FIN
+    (9) imprimir_declaracion -> . IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    $end            reduce using rule 1 (programa -> declaraciones .)
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 16
+    SI              shift and go to state 17
+    MIENTRAS        shift and go to state 18
+    IMPRIMIR        shift and go to state 19
+
+    declaracion                    shift and go to state 20
+    expresion                      shift and go to state 4
+    asignacion                     shift and go to state 5
+    si_declaracion                 shift and go to state 6
+    mientras_declaracion           shift and go to state 7
+    imprimir_declaracion           shift and go to state 8
+
+state 3
+
+    (2) declaraciones -> declaracion .
+
+    MENOS           reduce using rule 2 (declaraciones -> declaracion .)
+    PARENTESIS_IZQ  reduce using rule 2 (declaraciones -> declaracion .)
+    ENTERO          reduce using rule 2 (declaraciones -> declaracion .)
+    DECIMAL         reduce using rule 2 (declaraciones -> declaracion .)
+    CADENA          reduce using rule 2 (declaraciones -> declaracion .)
+    VERDADERO       reduce using rule 2 (declaraciones -> declaracion .)
+    FALSO           reduce using rule 2 (declaraciones -> declaracion .)
+    IDENTIFICADOR   reduce using rule 2 (declaraciones -> declaracion .)
+    SI              reduce using rule 2 (declaraciones -> declaracion .)
+    MIENTRAS        reduce using rule 2 (declaraciones -> declaracion .)
+    IMPRIMIR        reduce using rule 2 (declaraciones -> declaracion .)
+    $end            reduce using rule 2 (declaraciones -> declaracion .)
+    FIN             reduce using rule 2 (declaraciones -> declaracion .)
+    SINO            reduce using rule 2 (declaraciones -> declaracion .)
+
+
+state 4
+
+    (4) declaracion -> expresion . PUNTO_Y_COMA
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    shift and go to state 21
+    MAS             shift and go to state 22
+    MENOS           shift and go to state 23
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+
+state 5
+
+    (5) declaracion -> asignacion . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 34
+
+
+state 6
+
+    (6) declaracion -> si_declaracion .
+
+    MENOS           reduce using rule 6 (declaracion -> si_declaracion .)
+    PARENTESIS_IZQ  reduce using rule 6 (declaracion -> si_declaracion .)
+    ENTERO          reduce using rule 6 (declaracion -> si_declaracion .)
+    DECIMAL         reduce using rule 6 (declaracion -> si_declaracion .)
+    CADENA          reduce using rule 6 (declaracion -> si_declaracion .)
+    VERDADERO       reduce using rule 6 (declaracion -> si_declaracion .)
+    FALSO           reduce using rule 6 (declaracion -> si_declaracion .)
+    IDENTIFICADOR   reduce using rule 6 (declaracion -> si_declaracion .)
+    SI              reduce using rule 6 (declaracion -> si_declaracion .)
+    MIENTRAS        reduce using rule 6 (declaracion -> si_declaracion .)
+    IMPRIMIR        reduce using rule 6 (declaracion -> si_declaracion .)
+    $end            reduce using rule 6 (declaracion -> si_declaracion .)
+    FIN             reduce using rule 6 (declaracion -> si_declaracion .)
+    SINO            reduce using rule 6 (declaracion -> si_declaracion .)
+
+
+state 7
+
+    (7) declaracion -> mientras_declaracion .
+
+    MENOS           reduce using rule 7 (declaracion -> mientras_declaracion .)
+    PARENTESIS_IZQ  reduce using rule 7 (declaracion -> mientras_declaracion .)
+    ENTERO          reduce using rule 7 (declaracion -> mientras_declaracion .)
+    DECIMAL         reduce using rule 7 (declaracion -> mientras_declaracion .)
+    CADENA          reduce using rule 7 (declaracion -> mientras_declaracion .)
+    VERDADERO       reduce using rule 7 (declaracion -> mientras_declaracion .)
+    FALSO           reduce using rule 7 (declaracion -> mientras_declaracion .)
+    IDENTIFICADOR   reduce using rule 7 (declaracion -> mientras_declaracion .)
+    SI              reduce using rule 7 (declaracion -> mientras_declaracion .)
+    MIENTRAS        reduce using rule 7 (declaracion -> mientras_declaracion .)
+    IMPRIMIR        reduce using rule 7 (declaracion -> mientras_declaracion .)
+    $end            reduce using rule 7 (declaracion -> mientras_declaracion .)
+    FIN             reduce using rule 7 (declaracion -> mientras_declaracion .)
+    SINO            reduce using rule 7 (declaracion -> mientras_declaracion .)
+
+
+state 8
+
+    (8) declaracion -> imprimir_declaracion . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 35
+
+
+state 9
+
+    (22) expresion -> MENOS . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 36
+
+state 10
+
+    (23) expresion -> PARENTESIS_IZQ . expresion PARENTESIS_DER
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 38
+
+state 11
+
+    (24) expresion -> ENTERO .
+
+    PUNTO_Y_COMA    reduce using rule 24 (expresion -> ENTERO .)
+    MAS             reduce using rule 24 (expresion -> ENTERO .)
+    MENOS           reduce using rule 24 (expresion -> ENTERO .)
+    POR             reduce using rule 24 (expresion -> ENTERO .)
+    DIVIDIDO        reduce using rule 24 (expresion -> ENTERO .)
+    IGUAL           reduce using rule 24 (expresion -> ENTERO .)
+    NO_IGUAL        reduce using rule 24 (expresion -> ENTERO .)
+    MENOR           reduce using rule 24 (expresion -> ENTERO .)
+    MENOR_IGUAL     reduce using rule 24 (expresion -> ENTERO .)
+    MAYOR           reduce using rule 24 (expresion -> ENTERO .)
+    MAYOR_IGUAL     reduce using rule 24 (expresion -> ENTERO .)
+    Y               reduce using rule 24 (expresion -> ENTERO .)
+    O               reduce using rule 24 (expresion -> ENTERO .)
+    PARENTESIS_DER  reduce using rule 24 (expresion -> ENTERO .)
+    HACER           reduce using rule 24 (expresion -> ENTERO .)
+
+
+state 12
+
+    (25) expresion -> DECIMAL .
+
+    PUNTO_Y_COMA    reduce using rule 25 (expresion -> DECIMAL .)
+    MAS             reduce using rule 25 (expresion -> DECIMAL .)
+    MENOS           reduce using rule 25 (expresion -> DECIMAL .)
+    POR             reduce using rule 25 (expresion -> DECIMAL .)
+    DIVIDIDO        reduce using rule 25 (expresion -> DECIMAL .)
+    IGUAL           reduce using rule 25 (expresion -> DECIMAL .)
+    NO_IGUAL        reduce using rule 25 (expresion -> DECIMAL .)
+    MENOR           reduce using rule 25 (expresion -> DECIMAL .)
+    MENOR_IGUAL     reduce using rule 25 (expresion -> DECIMAL .)
+    MAYOR           reduce using rule 25 (expresion -> DECIMAL .)
+    MAYOR_IGUAL     reduce using rule 25 (expresion -> DECIMAL .)
+    Y               reduce using rule 25 (expresion -> DECIMAL .)
+    O               reduce using rule 25 (expresion -> DECIMAL .)
+    PARENTESIS_DER  reduce using rule 25 (expresion -> DECIMAL .)
+    HACER           reduce using rule 25 (expresion -> DECIMAL .)
+
+
+state 13
+
+    (26) expresion -> CADENA .
+
+    PUNTO_Y_COMA    reduce using rule 26 (expresion -> CADENA .)
+    MAS             reduce using rule 26 (expresion -> CADENA .)
+    MENOS           reduce using rule 26 (expresion -> CADENA .)
+    POR             reduce using rule 26 (expresion -> CADENA .)
+    DIVIDIDO        reduce using rule 26 (expresion -> CADENA .)
+    IGUAL           reduce using rule 26 (expresion -> CADENA .)
+    NO_IGUAL        reduce using rule 26 (expresion -> CADENA .)
+    MENOR           reduce using rule 26 (expresion -> CADENA .)
+    MENOR_IGUAL     reduce using rule 26 (expresion -> CADENA .)
+    MAYOR           reduce using rule 26 (expresion -> CADENA .)
+    MAYOR_IGUAL     reduce using rule 26 (expresion -> CADENA .)
+    Y               reduce using rule 26 (expresion -> CADENA .)
+    O               reduce using rule 26 (expresion -> CADENA .)
+    PARENTESIS_DER  reduce using rule 26 (expresion -> CADENA .)
+    HACER           reduce using rule 26 (expresion -> CADENA .)
+
+
+state 14
+
+    (27) expresion -> VERDADERO .
+
+    PUNTO_Y_COMA    reduce using rule 27 (expresion -> VERDADERO .)
+    MAS             reduce using rule 27 (expresion -> VERDADERO .)
+    MENOS           reduce using rule 27 (expresion -> VERDADERO .)
+    POR             reduce using rule 27 (expresion -> VERDADERO .)
+    DIVIDIDO        reduce using rule 27 (expresion -> VERDADERO .)
+    IGUAL           reduce using rule 27 (expresion -> VERDADERO .)
+    NO_IGUAL        reduce using rule 27 (expresion -> VERDADERO .)
+    MENOR           reduce using rule 27 (expresion -> VERDADERO .)
+    MENOR_IGUAL     reduce using rule 27 (expresion -> VERDADERO .)
+    MAYOR           reduce using rule 27 (expresion -> VERDADERO .)
+    MAYOR_IGUAL     reduce using rule 27 (expresion -> VERDADERO .)
+    Y               reduce using rule 27 (expresion -> VERDADERO .)
+    O               reduce using rule 27 (expresion -> VERDADERO .)
+    PARENTESIS_DER  reduce using rule 27 (expresion -> VERDADERO .)
+    HACER           reduce using rule 27 (expresion -> VERDADERO .)
+
+
+state 15
+
+    (28) expresion -> FALSO .
+
+    PUNTO_Y_COMA    reduce using rule 28 (expresion -> FALSO .)
+    MAS             reduce using rule 28 (expresion -> FALSO .)
+    MENOS           reduce using rule 28 (expresion -> FALSO .)
+    POR             reduce using rule 28 (expresion -> FALSO .)
+    DIVIDIDO        reduce using rule 28 (expresion -> FALSO .)
+    IGUAL           reduce using rule 28 (expresion -> FALSO .)
+    NO_IGUAL        reduce using rule 28 (expresion -> FALSO .)
+    MENOR           reduce using rule 28 (expresion -> FALSO .)
+    MENOR_IGUAL     reduce using rule 28 (expresion -> FALSO .)
+    MAYOR           reduce using rule 28 (expresion -> FALSO .)
+    MAYOR_IGUAL     reduce using rule 28 (expresion -> FALSO .)
+    Y               reduce using rule 28 (expresion -> FALSO .)
+    O               reduce using rule 28 (expresion -> FALSO .)
+    PARENTESIS_DER  reduce using rule 28 (expresion -> FALSO .)
+    HACER           reduce using rule 28 (expresion -> FALSO .)
+
+
+state 16
+
+    (29) expresion -> IDENTIFICADOR .
+    (30) asignacion -> IDENTIFICADOR . ASIGNACION expresion
+
+    PUNTO_Y_COMA    reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MAS             reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MENOS           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    POR             reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    DIVIDIDO        reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    IGUAL           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    NO_IGUAL        reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MENOR           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MENOR_IGUAL     reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MAYOR           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MAYOR_IGUAL     reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    Y               reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    O               reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    ASIGNACION      shift and go to state 39
+
+
+state 17
+
+    (31) si_declaracion -> SI . expresion HACER declaraciones FIN
+    (32) si_declaracion -> SI . expresion HACER declaraciones SINO HACER declaraciones FIN
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 40
+
+state 18
+
+    (33) mientras_declaracion -> MIENTRAS . expresion HACER declaraciones FIN
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 41
+
+state 19
+
+    (9) imprimir_declaracion -> IMPRIMIR . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    PARENTESIS_IZQ  shift and go to state 42
+
+
+state 20
+
+    (3) declaraciones -> declaraciones declaracion .
+
+    MENOS           reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    PARENTESIS_IZQ  reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    ENTERO          reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    DECIMAL         reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    CADENA          reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    VERDADERO       reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    FALSO           reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    IDENTIFICADOR   reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    SI              reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    MIENTRAS        reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    IMPRIMIR        reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    $end            reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    FIN             reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+    SINO            reduce using rule 3 (declaraciones -> declaraciones declaracion .)
+
+
+state 21
+
+    (4) declaracion -> expresion PUNTO_Y_COMA .
+
+    MENOS           reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    PARENTESIS_IZQ  reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    ENTERO          reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    DECIMAL         reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    CADENA          reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    VERDADERO       reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    FALSO           reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    SI              reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    MIENTRAS        reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    IMPRIMIR        reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    $end            reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    FIN             reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+    SINO            reduce using rule 4 (declaracion -> expresion PUNTO_Y_COMA .)
+
+
+state 22
+
+    (10) expresion -> expresion MAS . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 43
+
+state 23
+
+    (11) expresion -> expresion MENOS . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 44
+
+state 24
+
+    (12) expresion -> expresion POR . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 45
+
+state 25
+
+    (13) expresion -> expresion DIVIDIDO . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 46
+
+state 26
+
+    (14) expresion -> expresion IGUAL . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 47
+
+state 27
+
+    (15) expresion -> expresion NO_IGUAL . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 48
+
+state 28
+
+    (16) expresion -> expresion MENOR . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 49
+
+state 29
+
+    (17) expresion -> expresion MENOR_IGUAL . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 50
+
+state 30
+
+    (18) expresion -> expresion MAYOR . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 51
+
+state 31
+
+    (19) expresion -> expresion MAYOR_IGUAL . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 52
+
+state 32
+
+    (20) expresion -> expresion Y . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 53
+
+state 33
+
+    (21) expresion -> expresion O . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 54
+
+state 34
+
+    (5) declaracion -> asignacion PUNTO_Y_COMA .
+
+    MENOS           reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    PARENTESIS_IZQ  reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    ENTERO          reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    DECIMAL         reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    CADENA          reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    VERDADERO       reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    FALSO           reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    SI              reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    MIENTRAS        reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    IMPRIMIR        reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    $end            reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    FIN             reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+    SINO            reduce using rule 5 (declaracion -> asignacion PUNTO_Y_COMA .)
+
+
+state 35
+
+    (8) declaracion -> imprimir_declaracion PUNTO_Y_COMA .
+
+    MENOS           reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    PARENTESIS_IZQ  reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    ENTERO          reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    DECIMAL         reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    CADENA          reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    VERDADERO       reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    FALSO           reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    SI              reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    MIENTRAS        reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    IMPRIMIR        reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    $end            reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    FIN             reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+    SINO            reduce using rule 8 (declaracion -> imprimir_declaracion PUNTO_Y_COMA .)
+
+
+state 36
+
+    (22) expresion -> MENOS expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 22 (expresion -> MENOS expresion .)
+    PARENTESIS_DER  reduce using rule 22 (expresion -> MENOS expresion .)
+    HACER           reduce using rule 22 (expresion -> MENOS expresion .)
+    MAS             shift and go to state 22
+    MENOS           shift and go to state 23
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! MAS             [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! MENOS           [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! POR             [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! IGUAL           [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! MENOR           [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! MENOR_IGUAL     [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! MAYOR           [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! MAYOR_IGUAL     [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! Y               [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+  ! O               [ reduce using rule 22 (expresion -> MENOS expresion .) ]
+
+
+state 37
+
+    (29) expresion -> IDENTIFICADOR .
+
+    MAS             reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MENOS           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    POR             reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    DIVIDIDO        reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    IGUAL           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    NO_IGUAL        reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MENOR           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MENOR_IGUAL     reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MAYOR           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    MAYOR_IGUAL     reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    Y               reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    O               reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    PUNTO_Y_COMA    reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    PARENTESIS_DER  reduce using rule 29 (expresion -> IDENTIFICADOR .)
+    HACER           reduce using rule 29 (expresion -> IDENTIFICADOR .)
+
+
+state 38
+
+    (23) expresion -> PARENTESIS_IZQ expresion . PARENTESIS_DER
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PARENTESIS_DER  shift and go to state 55
+    MAS             shift and go to state 22
+    MENOS           shift and go to state 23
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+
+state 39
+
+    (30) asignacion -> IDENTIFICADOR ASIGNACION . expresion
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 56
+
+state 40
+
+    (31) si_declaracion -> SI expresion . HACER declaraciones FIN
+    (32) si_declaracion -> SI expresion . HACER declaraciones SINO HACER declaraciones FIN
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    HACER           shift and go to state 57
+    MAS             shift and go to state 22
+    MENOS           shift and go to state 23
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+
+state 41
+
+    (33) mientras_declaracion -> MIENTRAS expresion . HACER declaraciones FIN
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    HACER           shift and go to state 58
+    MAS             shift and go to state 22
+    MENOS           shift and go to state 23
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+
+state 42
+
+    (9) imprimir_declaracion -> IMPRIMIR PARENTESIS_IZQ . expresion PARENTESIS_DER
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 37
+
+    expresion                      shift and go to state 59
+
+state 43
+
+    (10) expresion -> expresion MAS expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 10 (expresion -> expresion MAS expresion .)
+    MAS             reduce using rule 10 (expresion -> expresion MAS expresion .)
+    MENOS           reduce using rule 10 (expresion -> expresion MAS expresion .)
+    PARENTESIS_DER  reduce using rule 10 (expresion -> expresion MAS expresion .)
+    HACER           reduce using rule 10 (expresion -> expresion MAS expresion .)
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! POR             [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! IGUAL           [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! MENOR           [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! MENOR_IGUAL     [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! MAYOR           [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! MAYOR_IGUAL     [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! Y               [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! O               [ reduce using rule 10 (expresion -> expresion MAS expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+
+
+state 44
+
+    (11) expresion -> expresion MENOS expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 11 (expresion -> expresion MENOS expresion .)
+    MAS             reduce using rule 11 (expresion -> expresion MENOS expresion .)
+    MENOS           reduce using rule 11 (expresion -> expresion MENOS expresion .)
+    PARENTESIS_DER  reduce using rule 11 (expresion -> expresion MENOS expresion .)
+    HACER           reduce using rule 11 (expresion -> expresion MENOS expresion .)
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! POR             [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! IGUAL           [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! MENOR           [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! MENOR_IGUAL     [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! MAYOR           [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! MAYOR_IGUAL     [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! Y               [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! O               [ reduce using rule 11 (expresion -> expresion MENOS expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+
+
+state 45
+
+    (12) expresion -> expresion POR expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 12 (expresion -> expresion POR expresion .)
+    MAS             reduce using rule 12 (expresion -> expresion POR expresion .)
+    MENOS           reduce using rule 12 (expresion -> expresion POR expresion .)
+    POR             reduce using rule 12 (expresion -> expresion POR expresion .)
+    DIVIDIDO        reduce using rule 12 (expresion -> expresion POR expresion .)
+    PARENTESIS_DER  reduce using rule 12 (expresion -> expresion POR expresion .)
+    HACER           reduce using rule 12 (expresion -> expresion POR expresion .)
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! IGUAL           [ reduce using rule 12 (expresion -> expresion POR expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 12 (expresion -> expresion POR expresion .) ]
+  ! MENOR           [ reduce using rule 12 (expresion -> expresion POR expresion .) ]
+  ! MENOR_IGUAL     [ reduce using rule 12 (expresion -> expresion POR expresion .) ]
+  ! MAYOR           [ reduce using rule 12 (expresion -> expresion POR expresion .) ]
+  ! MAYOR_IGUAL     [ reduce using rule 12 (expresion -> expresion POR expresion .) ]
+  ! Y               [ reduce using rule 12 (expresion -> expresion POR expresion .) ]
+  ! O               [ reduce using rule 12 (expresion -> expresion POR expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+
+
+state 46
+
+    (13) expresion -> expresion DIVIDIDO expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .)
+    MAS             reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .)
+    MENOS           reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .)
+    POR             reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .)
+    DIVIDIDO        reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .)
+    PARENTESIS_DER  reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .)
+    HACER           reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .)
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! IGUAL           [ reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .) ]
+  ! MENOR           [ reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .) ]
+  ! MENOR_IGUAL     [ reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .) ]
+  ! MAYOR           [ reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .) ]
+  ! MAYOR_IGUAL     [ reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .) ]
+  ! Y               [ reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .) ]
+  ! O               [ reduce using rule 13 (expresion -> expresion DIVIDIDO expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+
+
+state 47
+
+    (14) expresion -> expresion IGUAL expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    MAS             reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    MENOS           reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    POR             reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    DIVIDIDO        reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    IGUAL           reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    NO_IGUAL        reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    MENOR           reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    MENOR_IGUAL     reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    MAYOR           reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    MAYOR_IGUAL     reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    PARENTESIS_DER  reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    HACER           reduce using rule 14 (expresion -> expresion IGUAL expresion .)
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! Y               [ reduce using rule 14 (expresion -> expresion IGUAL expresion .) ]
+  ! O               [ reduce using rule 14 (expresion -> expresion IGUAL expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+  ! IGUAL           [ shift and go to state 26 ]
+  ! NO_IGUAL        [ shift and go to state 27 ]
+  ! MENOR           [ shift and go to state 28 ]
+  ! MENOR_IGUAL     [ shift and go to state 29 ]
+  ! MAYOR           [ shift and go to state 30 ]
+  ! MAYOR_IGUAL     [ shift and go to state 31 ]
+
+
+state 48
+
+    (15) expresion -> expresion NO_IGUAL expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    MAS             reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    MENOS           reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    POR             reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    DIVIDIDO        reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    IGUAL           reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    NO_IGUAL        reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    MENOR           reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    MENOR_IGUAL     reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    MAYOR           reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    MAYOR_IGUAL     reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    PARENTESIS_DER  reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    HACER           reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .)
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! Y               [ reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .) ]
+  ! O               [ reduce using rule 15 (expresion -> expresion NO_IGUAL expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+  ! IGUAL           [ shift and go to state 26 ]
+  ! NO_IGUAL        [ shift and go to state 27 ]
+  ! MENOR           [ shift and go to state 28 ]
+  ! MENOR_IGUAL     [ shift and go to state 29 ]
+  ! MAYOR           [ shift and go to state 30 ]
+  ! MAYOR_IGUAL     [ shift and go to state 31 ]
+
+
+state 49
+
+    (16) expresion -> expresion MENOR expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    MAS             reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    MENOS           reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    POR             reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    DIVIDIDO        reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    MENOR           reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    MENOR_IGUAL     reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    MAYOR           reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    MAYOR_IGUAL     reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    PARENTESIS_DER  reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    HACER           reduce using rule 16 (expresion -> expresion MENOR expresion .)
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! IGUAL           [ reduce using rule 16 (expresion -> expresion MENOR expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 16 (expresion -> expresion MENOR expresion .) ]
+  ! Y               [ reduce using rule 16 (expresion -> expresion MENOR expresion .) ]
+  ! O               [ reduce using rule 16 (expresion -> expresion MENOR expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+  ! MENOR           [ shift and go to state 28 ]
+  ! MENOR_IGUAL     [ shift and go to state 29 ]
+  ! MAYOR           [ shift and go to state 30 ]
+  ! MAYOR_IGUAL     [ shift and go to state 31 ]
+
+
+state 50
+
+    (17) expresion -> expresion MENOR_IGUAL expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    MAS             reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    MENOS           reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    POR             reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    DIVIDIDO        reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    MENOR           reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    MENOR_IGUAL     reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    MAYOR           reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    MAYOR_IGUAL     reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    PARENTESIS_DER  reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    HACER           reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .)
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! IGUAL           [ reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .) ]
+  ! Y               [ reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .) ]
+  ! O               [ reduce using rule 17 (expresion -> expresion MENOR_IGUAL expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+  ! MENOR           [ shift and go to state 28 ]
+  ! MENOR_IGUAL     [ shift and go to state 29 ]
+  ! MAYOR           [ shift and go to state 30 ]
+  ! MAYOR_IGUAL     [ shift and go to state 31 ]
+
+
+state 51
+
+    (18) expresion -> expresion MAYOR expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    MAS             reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    MENOS           reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    POR             reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    DIVIDIDO        reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    MENOR           reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    MENOR_IGUAL     reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    MAYOR           reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    MAYOR_IGUAL     reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    PARENTESIS_DER  reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    HACER           reduce using rule 18 (expresion -> expresion MAYOR expresion .)
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! IGUAL           [ reduce using rule 18 (expresion -> expresion MAYOR expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 18 (expresion -> expresion MAYOR expresion .) ]
+  ! Y               [ reduce using rule 18 (expresion -> expresion MAYOR expresion .) ]
+  ! O               [ reduce using rule 18 (expresion -> expresion MAYOR expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+  ! MENOR           [ shift and go to state 28 ]
+  ! MENOR_IGUAL     [ shift and go to state 29 ]
+  ! MAYOR           [ shift and go to state 30 ]
+  ! MAYOR_IGUAL     [ shift and go to state 31 ]
+
+
+state 52
+
+    (19) expresion -> expresion MAYOR_IGUAL expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    MAS             reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    MENOS           reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    POR             reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    DIVIDIDO        reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    MENOR           reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    MENOR_IGUAL     reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    MAYOR           reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    MAYOR_IGUAL     reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    PARENTESIS_DER  reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    HACER           reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .)
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+  ! IGUAL           [ reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .) ]
+  ! NO_IGUAL        [ reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .) ]
+  ! Y               [ reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .) ]
+  ! O               [ reduce using rule 19 (expresion -> expresion MAYOR_IGUAL expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+  ! MENOR           [ shift and go to state 28 ]
+  ! MENOR_IGUAL     [ shift and go to state 29 ]
+  ! MAYOR           [ shift and go to state 30 ]
+  ! MAYOR_IGUAL     [ shift and go to state 31 ]
+
+
+state 53
+
+    (20) expresion -> expresion Y expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 20 (expresion -> expresion Y expresion .)
+    MAS             reduce using rule 20 (expresion -> expresion Y expresion .)
+    MENOS           reduce using rule 20 (expresion -> expresion Y expresion .)
+    POR             reduce using rule 20 (expresion -> expresion Y expresion .)
+    DIVIDIDO        reduce using rule 20 (expresion -> expresion Y expresion .)
+    IGUAL           reduce using rule 20 (expresion -> expresion Y expresion .)
+    NO_IGUAL        reduce using rule 20 (expresion -> expresion Y expresion .)
+    MENOR           reduce using rule 20 (expresion -> expresion Y expresion .)
+    MENOR_IGUAL     reduce using rule 20 (expresion -> expresion Y expresion .)
+    MAYOR           reduce using rule 20 (expresion -> expresion Y expresion .)
+    MAYOR_IGUAL     reduce using rule 20 (expresion -> expresion Y expresion .)
+    Y               reduce using rule 20 (expresion -> expresion Y expresion .)
+    PARENTESIS_DER  reduce using rule 20 (expresion -> expresion Y expresion .)
+    HACER           reduce using rule 20 (expresion -> expresion Y expresion .)
+    O               shift and go to state 33
+
+  ! O               [ reduce using rule 20 (expresion -> expresion Y expresion .) ]
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+  ! IGUAL           [ shift and go to state 26 ]
+  ! NO_IGUAL        [ shift and go to state 27 ]
+  ! MENOR           [ shift and go to state 28 ]
+  ! MENOR_IGUAL     [ shift and go to state 29 ]
+  ! MAYOR           [ shift and go to state 30 ]
+  ! MAYOR_IGUAL     [ shift and go to state 31 ]
+  ! Y               [ shift and go to state 32 ]
+
+
+state 54
+
+    (21) expresion -> expresion O expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 21 (expresion -> expresion O expresion .)
+    MAS             reduce using rule 21 (expresion -> expresion O expresion .)
+    MENOS           reduce using rule 21 (expresion -> expresion O expresion .)
+    POR             reduce using rule 21 (expresion -> expresion O expresion .)
+    DIVIDIDO        reduce using rule 21 (expresion -> expresion O expresion .)
+    IGUAL           reduce using rule 21 (expresion -> expresion O expresion .)
+    NO_IGUAL        reduce using rule 21 (expresion -> expresion O expresion .)
+    MENOR           reduce using rule 21 (expresion -> expresion O expresion .)
+    MENOR_IGUAL     reduce using rule 21 (expresion -> expresion O expresion .)
+    MAYOR           reduce using rule 21 (expresion -> expresion O expresion .)
+    MAYOR_IGUAL     reduce using rule 21 (expresion -> expresion O expresion .)
+    Y               reduce using rule 21 (expresion -> expresion O expresion .)
+    O               reduce using rule 21 (expresion -> expresion O expresion .)
+    PARENTESIS_DER  reduce using rule 21 (expresion -> expresion O expresion .)
+    HACER           reduce using rule 21 (expresion -> expresion O expresion .)
+
+  ! MAS             [ shift and go to state 22 ]
+  ! MENOS           [ shift and go to state 23 ]
+  ! POR             [ shift and go to state 24 ]
+  ! DIVIDIDO        [ shift and go to state 25 ]
+  ! IGUAL           [ shift and go to state 26 ]
+  ! NO_IGUAL        [ shift and go to state 27 ]
+  ! MENOR           [ shift and go to state 28 ]
+  ! MENOR_IGUAL     [ shift and go to state 29 ]
+  ! MAYOR           [ shift and go to state 30 ]
+  ! MAYOR_IGUAL     [ shift and go to state 31 ]
+  ! Y               [ shift and go to state 32 ]
+  ! O               [ shift and go to state 33 ]
+
+
+state 55
+
+    (23) expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .
+
+    PUNTO_Y_COMA    reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    MAS             reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    MENOS           reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    POR             reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    DIVIDIDO        reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    IGUAL           reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    NO_IGUAL        reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    MENOR           reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    MENOR_IGUAL     reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    MAYOR           reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    MAYOR_IGUAL     reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    Y               reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    O               reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    PARENTESIS_DER  reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    HACER           reduce using rule 23 (expresion -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+
+
+state 56
+
+    (30) asignacion -> IDENTIFICADOR ASIGNACION expresion .
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PUNTO_Y_COMA    reduce using rule 30 (asignacion -> IDENTIFICADOR ASIGNACION expresion .)
+    MAS             shift and go to state 22
+    MENOS           shift and go to state 23
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+
+state 57
+
+    (31) si_declaracion -> SI expresion HACER . declaraciones FIN
+    (32) si_declaracion -> SI expresion HACER . declaraciones SINO HACER declaraciones FIN
+    (2) declaraciones -> . declaracion
+    (3) declaraciones -> . declaraciones declaracion
+    (4) declaracion -> . expresion PUNTO_Y_COMA
+    (5) declaracion -> . asignacion PUNTO_Y_COMA
+    (6) declaracion -> . si_declaracion
+    (7) declaracion -> . mientras_declaracion
+    (8) declaracion -> . imprimir_declaracion PUNTO_Y_COMA
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+    (30) asignacion -> . IDENTIFICADOR ASIGNACION expresion
+    (31) si_declaracion -> . SI expresion HACER declaraciones FIN
+    (32) si_declaracion -> . SI expresion HACER declaraciones SINO HACER declaraciones FIN
+    (33) mientras_declaracion -> . MIENTRAS expresion HACER declaraciones FIN
+    (9) imprimir_declaracion -> . IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 16
+    SI              shift and go to state 17
+    MIENTRAS        shift and go to state 18
+    IMPRIMIR        shift and go to state 19
+
+    expresion                      shift and go to state 4
+    declaraciones                  shift and go to state 60
+    declaracion                    shift and go to state 3
+    asignacion                     shift and go to state 5
+    si_declaracion                 shift and go to state 6
+    mientras_declaracion           shift and go to state 7
+    imprimir_declaracion           shift and go to state 8
+
+state 58
+
+    (33) mientras_declaracion -> MIENTRAS expresion HACER . declaraciones FIN
+    (2) declaraciones -> . declaracion
+    (3) declaraciones -> . declaraciones declaracion
+    (4) declaracion -> . expresion PUNTO_Y_COMA
+    (5) declaracion -> . asignacion PUNTO_Y_COMA
+    (6) declaracion -> . si_declaracion
+    (7) declaracion -> . mientras_declaracion
+    (8) declaracion -> . imprimir_declaracion PUNTO_Y_COMA
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+    (30) asignacion -> . IDENTIFICADOR ASIGNACION expresion
+    (31) si_declaracion -> . SI expresion HACER declaraciones FIN
+    (32) si_declaracion -> . SI expresion HACER declaraciones SINO HACER declaraciones FIN
+    (33) mientras_declaracion -> . MIENTRAS expresion HACER declaraciones FIN
+    (9) imprimir_declaracion -> . IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 16
+    SI              shift and go to state 17
+    MIENTRAS        shift and go to state 18
+    IMPRIMIR        shift and go to state 19
+
+    expresion                      shift and go to state 4
+    declaraciones                  shift and go to state 61
+    declaracion                    shift and go to state 3
+    asignacion                     shift and go to state 5
+    si_declaracion                 shift and go to state 6
+    mientras_declaracion           shift and go to state 7
+    imprimir_declaracion           shift and go to state 8
+
+state 59
+
+    (9) imprimir_declaracion -> IMPRIMIR PARENTESIS_IZQ expresion . PARENTESIS_DER
+    (10) expresion -> expresion . MAS expresion
+    (11) expresion -> expresion . MENOS expresion
+    (12) expresion -> expresion . POR expresion
+    (13) expresion -> expresion . DIVIDIDO expresion
+    (14) expresion -> expresion . IGUAL expresion
+    (15) expresion -> expresion . NO_IGUAL expresion
+    (16) expresion -> expresion . MENOR expresion
+    (17) expresion -> expresion . MENOR_IGUAL expresion
+    (18) expresion -> expresion . MAYOR expresion
+    (19) expresion -> expresion . MAYOR_IGUAL expresion
+    (20) expresion -> expresion . Y expresion
+    (21) expresion -> expresion . O expresion
+
+    PARENTESIS_DER  shift and go to state 62
+    MAS             shift and go to state 22
+    MENOS           shift and go to state 23
+    POR             shift and go to state 24
+    DIVIDIDO        shift and go to state 25
+    IGUAL           shift and go to state 26
+    NO_IGUAL        shift and go to state 27
+    MENOR           shift and go to state 28
+    MENOR_IGUAL     shift and go to state 29
+    MAYOR           shift and go to state 30
+    MAYOR_IGUAL     shift and go to state 31
+    Y               shift and go to state 32
+    O               shift and go to state 33
+
+
+state 60
+
+    (31) si_declaracion -> SI expresion HACER declaraciones . FIN
+    (32) si_declaracion -> SI expresion HACER declaraciones . SINO HACER declaraciones FIN
+    (3) declaraciones -> declaraciones . declaracion
+    (4) declaracion -> . expresion PUNTO_Y_COMA
+    (5) declaracion -> . asignacion PUNTO_Y_COMA
+    (6) declaracion -> . si_declaracion
+    (7) declaracion -> . mientras_declaracion
+    (8) declaracion -> . imprimir_declaracion PUNTO_Y_COMA
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+    (30) asignacion -> . IDENTIFICADOR ASIGNACION expresion
+    (31) si_declaracion -> . SI expresion HACER declaraciones FIN
+    (32) si_declaracion -> . SI expresion HACER declaraciones SINO HACER declaraciones FIN
+    (33) mientras_declaracion -> . MIENTRAS expresion HACER declaraciones FIN
+    (9) imprimir_declaracion -> . IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    FIN             shift and go to state 63
+    SINO            shift and go to state 64
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 16
+    SI              shift and go to state 17
+    MIENTRAS        shift and go to state 18
+    IMPRIMIR        shift and go to state 19
+
+    expresion                      shift and go to state 4
+    declaracion                    shift and go to state 20
+    asignacion                     shift and go to state 5
+    si_declaracion                 shift and go to state 6
+    mientras_declaracion           shift and go to state 7
+    imprimir_declaracion           shift and go to state 8
+
+state 61
+
+    (33) mientras_declaracion -> MIENTRAS expresion HACER declaraciones . FIN
+    (3) declaraciones -> declaraciones . declaracion
+    (4) declaracion -> . expresion PUNTO_Y_COMA
+    (5) declaracion -> . asignacion PUNTO_Y_COMA
+    (6) declaracion -> . si_declaracion
+    (7) declaracion -> . mientras_declaracion
+    (8) declaracion -> . imprimir_declaracion PUNTO_Y_COMA
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+    (30) asignacion -> . IDENTIFICADOR ASIGNACION expresion
+    (31) si_declaracion -> . SI expresion HACER declaraciones FIN
+    (32) si_declaracion -> . SI expresion HACER declaraciones SINO HACER declaraciones FIN
+    (33) mientras_declaracion -> . MIENTRAS expresion HACER declaraciones FIN
+    (9) imprimir_declaracion -> . IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    FIN             shift and go to state 65
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 16
+    SI              shift and go to state 17
+    MIENTRAS        shift and go to state 18
+    IMPRIMIR        shift and go to state 19
+
+    expresion                      shift and go to state 4
+    declaracion                    shift and go to state 20
+    asignacion                     shift and go to state 5
+    si_declaracion                 shift and go to state 6
+    mientras_declaracion           shift and go to state 7
+    imprimir_declaracion           shift and go to state 8
+
+state 62
+
+    (9) imprimir_declaracion -> IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER .
+
+    PUNTO_Y_COMA    reduce using rule 9 (imprimir_declaracion -> IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER .)
+
+
+state 63
+
+    (31) si_declaracion -> SI expresion HACER declaraciones FIN .
+
+    MENOS           reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    PARENTESIS_IZQ  reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    ENTERO          reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    DECIMAL         reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    CADENA          reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    VERDADERO       reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    FALSO           reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    IDENTIFICADOR   reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    SI              reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    MIENTRAS        reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    IMPRIMIR        reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    $end            reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    FIN             reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+    SINO            reduce using rule 31 (si_declaracion -> SI expresion HACER declaraciones FIN .)
+
+
+state 64
+
+    (32) si_declaracion -> SI expresion HACER declaraciones SINO . HACER declaraciones FIN
+
+    HACER           shift and go to state 66
+
+
+state 65
+
+    (33) mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .
+
+    MENOS           reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    PARENTESIS_IZQ  reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    ENTERO          reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    DECIMAL         reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    CADENA          reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    VERDADERO       reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    FALSO           reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    IDENTIFICADOR   reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    SI              reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    MIENTRAS        reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    IMPRIMIR        reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    $end            reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    FIN             reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+    SINO            reduce using rule 33 (mientras_declaracion -> MIENTRAS expresion HACER declaraciones FIN .)
+
+
+state 66
+
+    (32) si_declaracion -> SI expresion HACER declaraciones SINO HACER . declaraciones FIN
+    (2) declaraciones -> . declaracion
+    (3) declaraciones -> . declaraciones declaracion
+    (4) declaracion -> . expresion PUNTO_Y_COMA
+    (5) declaracion -> . asignacion PUNTO_Y_COMA
+    (6) declaracion -> . si_declaracion
+    (7) declaracion -> . mientras_declaracion
+    (8) declaracion -> . imprimir_declaracion PUNTO_Y_COMA
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+    (30) asignacion -> . IDENTIFICADOR ASIGNACION expresion
+    (31) si_declaracion -> . SI expresion HACER declaraciones FIN
+    (32) si_declaracion -> . SI expresion HACER declaraciones SINO HACER declaraciones FIN
+    (33) mientras_declaracion -> . MIENTRAS expresion HACER declaraciones FIN
+    (9) imprimir_declaracion -> . IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 16
+    SI              shift and go to state 17
+    MIENTRAS        shift and go to state 18
+    IMPRIMIR        shift and go to state 19
+
+    expresion                      shift and go to state 4
+    declaraciones                  shift and go to state 67
+    declaracion                    shift and go to state 3
+    asignacion                     shift and go to state 5
+    si_declaracion                 shift and go to state 6
+    mientras_declaracion           shift and go to state 7
+    imprimir_declaracion           shift and go to state 8
+
+state 67
+
+    (32) si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones . FIN
+    (3) declaraciones -> declaraciones . declaracion
+    (4) declaracion -> . expresion PUNTO_Y_COMA
+    (5) declaracion -> . asignacion PUNTO_Y_COMA
+    (6) declaracion -> . si_declaracion
+    (7) declaracion -> . mientras_declaracion
+    (8) declaracion -> . imprimir_declaracion PUNTO_Y_COMA
+    (10) expresion -> . expresion MAS expresion
+    (11) expresion -> . expresion MENOS expresion
+    (12) expresion -> . expresion POR expresion
+    (13) expresion -> . expresion DIVIDIDO expresion
+    (14) expresion -> . expresion IGUAL expresion
+    (15) expresion -> . expresion NO_IGUAL expresion
+    (16) expresion -> . expresion MENOR expresion
+    (17) expresion -> . expresion MENOR_IGUAL expresion
+    (18) expresion -> . expresion MAYOR expresion
+    (19) expresion -> . expresion MAYOR_IGUAL expresion
+    (20) expresion -> . expresion Y expresion
+    (21) expresion -> . expresion O expresion
+    (22) expresion -> . MENOS expresion
+    (23) expresion -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+    (24) expresion -> . ENTERO
+    (25) expresion -> . DECIMAL
+    (26) expresion -> . CADENA
+    (27) expresion -> . VERDADERO
+    (28) expresion -> . FALSO
+    (29) expresion -> . IDENTIFICADOR
+    (30) asignacion -> . IDENTIFICADOR ASIGNACION expresion
+    (31) si_declaracion -> . SI expresion HACER declaraciones FIN
+    (32) si_declaracion -> . SI expresion HACER declaraciones SINO HACER declaraciones FIN
+    (33) mientras_declaracion -> . MIENTRAS expresion HACER declaraciones FIN
+    (9) imprimir_declaracion -> . IMPRIMIR PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    FIN             shift and go to state 68
+    MENOS           shift and go to state 9
+    PARENTESIS_IZQ  shift and go to state 10
+    ENTERO          shift and go to state 11
+    DECIMAL         shift and go to state 12
+    CADENA          shift and go to state 13
+    VERDADERO       shift and go to state 14
+    FALSO           shift and go to state 15
+    IDENTIFICADOR   shift and go to state 16
+    SI              shift and go to state 17
+    MIENTRAS        shift and go to state 18
+    IMPRIMIR        shift and go to state 19
+
+    expresion                      shift and go to state 4
+    declaracion                    shift and go to state 20
+    asignacion                     shift and go to state 5
+    si_declaracion                 shift and go to state 6
+    mientras_declaracion           shift and go to state 7
+    imprimir_declaracion           shift and go to state 8
+
+state 68
+
+    (32) si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .
+
+    MENOS           reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    PARENTESIS_IZQ  reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    ENTERO          reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    DECIMAL         reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    CADENA          reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    VERDADERO       reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    FALSO           reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    IDENTIFICADOR   reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    SI              reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    MIENTRAS        reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    IMPRIMIR        reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    $end            reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    FIN             reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+    SINO            reduce using rule 32 (si_declaracion -> SI expresion HACER declaraciones SINO HACER declaraciones FIN .)
+
