@@ -7,7 +7,7 @@ Proporcionar un entorno sencillo para aprender conceptos básicos de programaci�
 Ofrecer una sintaxis accesible para hispanohablantes
 Servir como ejemplo de implementación de lexers y parsers en Python
 Demostración
-https://youtu.be/jhoRWGwF20s
+https://www.youtube.com/watch?v=i_jdpxyP_kA
 Características principales:
 
 Variables y expresiones matemáticas.
