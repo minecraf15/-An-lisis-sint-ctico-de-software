@@ -1,7 +1,5 @@
 # -An-lisis-sint-ctico-de-software
-Subliminal666 - Intérprete de Lenguaje en Español
-🎯 Objetivo del software
-Subliminal666 es un intérprete que permite ejecutar código con una sintaxis similar a un pseudocódigo en español. Está diseñado para:
+🎯 Objetivo del software Subliminal666 es un intérprete que permite ejecutar código con una sintaxis similar a un pseudocódigo en español. Está diseñado para:
 
 Proporcionar un entorno sencillo para aprender conceptos básicos de programación.
 Ofrecer una sintaxis accesible para hispanohablantes
@@ -31,9 +29,7 @@ python main.py
 
 bash'''
 
-💻 Uso Básico
-El intérprete ofrece un REPL (Read-Eval-Print Loop) interactivo:
-
+💻 Uso Básico El intérprete ofrece un REPL (Read-Eval-Print Loop) interactivo:
 
 subliminal666> x = 5 + 3;
 subliminal666> imprimir(x);
@@ -83,9 +79,8 @@ subliminal666> mientras contador < 3 hacer
 Iteración: 0  
 Iteración: 1  
 Iteración: 2
-🏗️ Estructura del Proyecto
-bash
-Copiar
+
+🏗️Estructura del Proyecto bash Copiar
 Editar
 subliminal666/
 ├── lexico.py      # Analizador léxico (tokenizer)
